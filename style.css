@@ -1,0 +1,219 @@
+@keyframes cambiocolor {
+    0% {
+        background: #d281f7;
+    }
+
+    25% {
+        background: #d46b6b;
+    }
+
+    50% {
+        background: #5863f7;
+    }
+
+    75% {
+        background: #9381f7;
+    }
+
+    100% {
+        background: #d281f7;
+    }
+}
+
+@keyframes btnc {
+    0% {
+        background: #0084ff;
+    }
+
+    50% {
+        background: #ae00ff;
+    }
+
+    100% {
+        background: #0084ff;
+    }
+}
+
+@keyframes moveRandom {
+    0% {
+        top: 10%;
+        left: 15%;
+    }
+
+    25% {
+        top: 50%;
+        left: 70%;
+    }
+
+    50% {
+        top: 80%;
+        left: 30%;
+    }
+
+    75% {
+        top: 20%;
+        left: 90%;
+    }
+
+    100% {
+        top: 10%;
+        left: 15%;
+    }
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.spinner {
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffffff;
+    border-top: 5px solid #61dafb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.emoji {
+    z-index: -1;
+    position: absolute;
+    font-size: 2rem;
+    user-select: none;
+    transition: top 2s ease, left 2s ease;
+}
+
+html,
+body {
+    z-index: 2;
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    animation: cambiocolor 15s linear infinite;
+}
+
+.todo {
+    height: min-content;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(127, 255, 212, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw; /* Asegura que ocupe un porcentaje del ancho */
+    max-width: 600px; /* Limita el tamaño máximo */
+    border-radius: 10px;
+}
+
+.botones {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #00000000;
+    padding: 2px;
+    display: inline-flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.titulo {
+    box-shadow: 20px 20px 20px black;
+    font-size: 4vw; /* Tamaño de fuente relativo */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: #096ac48c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Asegura que ocupe un porcentaje del ancho */
+    max-width: 80vw;
+    text-align: center;
+}
+
+#No, #SI {
+    box-shadow: 20px 20px 20px black;
+    animation: btnc 5s linear infinite;
+    transition: 1s;
+    font-size: 2vh;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 2px;
+    width: 25vw; /* Ancho relativo */
+    max-width: 150px; /* Limita el tamaño máximo */
+}
+
+#video1 {
+    border: #31be50 5px;
+    border-radius: 10px;
+    box-shadow: 20px 20px 20px black;
+    max-width: 100%;
+    height: auto;
+}
+
+.video {
+    background-color: #3152be;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#No:hover,
+#SI:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 6vw; /* Ajusta el tamaño de la fuente en pantallas más pequeñas */
+    }
+
+    .todo {
+        width: 90vw; /* Aumenta el ancho relativo para pantallas más pequeñas */
+        padding: 10px;
+    }
+
+    #No, #SI {
+        width: 40vw; /* Aumenta el ancho de los botones */
+        font-size: 4vh; /* Aumenta el tamaño de la fuente en botones */
+    }
+
+    .emoji {
+        font-size: 1.5rem; /* Ajusta el tamaño de los emojis */
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 8vw; /* Ajusta aún más el tamaño de la fuente */
+    }
+
+    .todo {
+        padding: 5px;
+    }
+
+    #No, #SI {
+        width: 45vw; /* Ajusta los botones para pantallas más pequeñas */
+    }
+}
